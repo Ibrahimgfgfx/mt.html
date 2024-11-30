@@ -3,95 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacked by Ibrahim</title>
+    <title>خدمات تقنية - إبراهيم</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: black;
-            color: #0f0;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            direction: rtl;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #1a1a1a;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #f39c12;
+        }
+        header p {
+            font-size: 1.3em;
+            margin: 10px 0 0;
+        }
+        section {
+            padding: 50px 20px;
             text-align: center;
         }
-        h1 {
-            font-size: 4em;
-            margin-top: 20%;
-            animation: flicker 1.5s infinite;
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #f39c12;
         }
-        p {
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .service-card {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+        }
+        .service-card h3 {
+            color: #f39c12;
+            margin-bottom: 10px;
             font-size: 1.5em;
-            margin-top: 20px;
         }
-        a {
-            color: #0f0;
-            text-decoration: none;
+        .service-card p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .contact {
+            background-color: #1a1a1a;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .contact h2 {
+            margin-bottom: 20px;
+        }
+        .contact a {
+            display: block;
             font-size: 1.2em;
-            border: 2px solid #0f0;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+            color: #f39c12;
+            text-decoration: none;
+            margin: 10px 0;
+            transition: color 0.3s ease;
         }
-        a:hover {
-            background: #0f0;
-            color: black;
-        }
-        @keyframes flicker {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.3;
-            }
-        }
-        .glitch {
-            position: relative;
-            display: inline-block;
-            font-size: 4em;
-            color: #0f0;
-        }
-        .glitch::before,
-        .glitch::after {
-            content: "Hacked by Ibrahim";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: black;
-            color: #0f0;
-            clip: rect(0, 900px, 0, 0);
-            animation: glitch 1.5s infinite;
-        }
-        .glitch::before {
-            animation-delay: 0.2s;
-        }
-        .glitch::after {
-            animation-delay: 0.4s;
-        }
-        @keyframes glitch {
-            0% {
-                clip: rect(0, 900px, 0, 0);
-            }
-            50% {
-                clip: rect(0, 900px, 400px, 0);
-                transform: translate(5px, -5px);
-            }
-            100% {
-                clip: rect(400px, 900px, 900px, 0);
-                transform: translate(-5px, 5px);
-            }
+        .contact a:hover {
+            color: #fff;
         }
         footer {
-            margin-top: 20px;
-            font-size: 1.2em;
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <h1 class="glitch">Hacked by Ibrahim</h1>
-    <p>الأمن السيبراني هو مملكتي</p>
-    <p>تم اختراق هذا الموقع بواسطة إبراهيم.</p>
-    <a href="#">عودة إلى الصفحة الرئيسية</a>
-    <footer>&copy; 2024 - جميع الحقوق محفوظة.</footer>
+
+<header>
+    <h1>إبراهيم - مستشار الأمن السيبراني</h1>
+    <p>حلول تقنية متكاملة ومساعدات مهنية</p>
+</header>
+
+<section>
+    <h2>الخدمات المقدمة</h2>
+    <div class="services">
+        <div class="service-card">
+            <h3>الأمن السيبراني</h3>
+            <p>حماية المواقع، التحقيق في الاختراقات، وإصلاح نقاط الضعف الأمنية.</p>
+        </div>
+        <div class="service-card">
+            <h3>استعادة الحسابات</h3>
+            <p>مساعدتك في استعادة حساباتك على فيسبوك، إنستجرام، يوتيوب، وغيرها.</p>
+        </div>
+        <div class="service-card">
+            <h3>مشاكل الهواتف</h3>
+            <p>فك قفل الهاتف، استعادة البيانات، وإصلاح المشاكل التقنية.</p>
+        </div>
+        <div class="service-card">
+            <h3>ألعاب الفيديو</h3>
+            <p>حل مشاكل الحسابات، استعادة البيانات، وإصلاح الأعطال التقنية.</p>
+        </div>
+        <div class="service-card">
+            <h3>استشارات تقنية</h3>
+            <p>نصائح وإرشادات لتطوير مشاريعك التقنية وتحسين أدائك.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>للتواصل</h2>
+    <p>هاتف: <a href="tel:0783308069">0783308069</a></p>
+    <p>البريد الإلكتروني: <a href="mailto:ryryryreyy54y@gmail.com">ryryryreyy54y@gmail.com</a></p>
+</section>
+
+<footer>
+    <p>© 2024 - إبراهيم، جميع الحقوق محفوظة.</p>
+</footer>
+
 </body>
 </html>
