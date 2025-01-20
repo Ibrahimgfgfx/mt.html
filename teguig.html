@@ -1,142 +1,337 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدمات تقنية - إبراهيم</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
-            direction: rtl;
-        }
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #1a1a1a;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-            color: #f39c12;
-        }
-        header p {
-            font-size: 1.3em;
-            margin: 10px 0 0;
-        }
-        section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-        section h2 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            color: #f39c12;
-        }
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-        .service-card {
-            background-color: #222;
-            border-radius: 10px;
-            padding: 20px;
-            width: 280px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
-        }
-        .service-card h3 {
-            color: #f39c12;
-            margin-bottom: 10px;
-            font-size: 1.5em;
-        }
-        .service-card p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-        .contact {
-            background-color: #1a1a1a;
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-        .contact h2 {
-            margin-bottom: 20px;
-        }
-        .contact a {
-            display: block;
-            font-size: 1.2em;
-            color: #f39c12;
-            text-decoration: none;
-            margin: 10px 0;
-            transition: color 0.3s ease;
-        }
-        .contact a:hover {
-            color: #fff;
-        }
-        footer {
-            background-color: #111;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        footer p {
-            margin: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خدمات تقنية - Teguig Ibrahim</title>
+  <style>
+    /* إضافة تأثير الإضاءة والإطار */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(45deg, #4e73df, #1cc88a);
+      color: #333;
+      animation: backgroundAnimation 10s ease-in-out infinite;
+    }
+
+    @keyframes backgroundAnimation {
+      0% {
+        background: linear-gradient(45deg, #4e73df, #1cc88a);
+      }
+      50% {
+        background: linear-gradient(45deg, #ff6347, #6a5acd);
+      }
+      100% {
+        background: linear-gradient(45deg, #4e73df, #1cc88a);
+      }
+    }
+
+    /* إضافة إطار ملون حول الصفحة */
+    .page-wrapper {
+      border: 10px solid #fff;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      background: transparent;
+      animation: borderAnimation 3s ease-in-out infinite;
+    }
+
+    @keyframes borderAnimation {
+      0% {
+        border-color: #ff6347;
+      }
+      50% {
+        border-color: #6a5acd;
+      }
+      100% {
+        border-color: #ff6347;
+      }
+    }
+
+    header {
+      background-color: #004d00;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .moving-icons {
+      display: flex;
+      justify-content: space-around;
+      animation: move 6s linear infinite;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .moving-icons img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .sidebar {
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+      color: #e63946;
+    }
+
+    .main-content {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .service {
+      margin: 20px 0;
+      padding: 15px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease-in-out;
+      text-align: center;
+    }
+
+    .service:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .service img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .service h3 {
+      color: #004d00;
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .service p {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .service span {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      color: #e63946;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #e63946;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .contact a {
+      color: #004d00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .testimonial, .comment {
+      display: none;
+      margin: 20px 0;
+      padding: 15px;
+      background: #f8f8f8;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .testimonial-name, .comment-name {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .comments-section, .testimonials {
+      margin: 40px auto;
+      width: 80%;
+    }
+
+    .comments-section .comment, .testimonials .testimonial {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        flex-wrap: nowrap;
+      }
+
+      .sidebar {
+        width: 250px;
+        position: fixed;
+        height: 100vh;
+      }
+
+      .main-content {
+        margin-left: 270px;
+        width: calc(100% - 270px);
+      }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <h1>إبراهيم - مستشار الأمن السيبراني</h1>
-    <p>حلول تقنية متكاملة ومساعدات مهنية</p>
-</header>
-
-<section>
-    <h2>الخدمات المقدمة</h2>
-    <div class="services">
-        <div class="service-card">
-            <h3>الأمن السيبراني</h3>
-            <p>حماية المواقع، التحقيق في الاختراقات، وإصلاح نقاط الضعف الأمنية.</p>
+  <div class="page-wrapper">
+    <header>
+      ✨ خدمات تقنية احترافية بأسعار مميزة! ✨
+      <div class="moving-icons">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJHjnnoSVTCA_zADyFy5r_IMN2sPxqhVos7g&s" alt="Icon 1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGr51ZB_VFANG1VtY2ii3WpQkK5_a74H1Ipw&s" alt="Icon 2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ11v8m1DX7rp87uMi2wtRSxScGQkg-WqMlqdLCBWKBXOOuZ3rzXuoN82I&s=10" alt="Icon 3">
+      </div>
+    </header>
+    <div class="container">
+      <div class="sidebar">
+        <h3>قائمة الخدمات</h3>
+        <ul>
+          <li><a href="#unlock-phone">فتح قفل الهاتف</a></li>
+          <li><a href="#phone-issues">مشاكل الهاتف والكمبيوتر</a></li>
+          <li><a href="#facebook">مشاكل الفيسبوك</a></li>
+          <li><a href="#google-lock">تخطي قفل Google</a></li>
+          <li><a href="#courses">كورسات تعليمية</a></li>
+          <li><a href="#other-services">خدمات أخرى</a></li>
+        </ul>
+      </div>
+      <div class="main-content">
+        <div id="unlock-phone" class="service">
+          <img src="https://via.placeholder.com/60" alt="قفل">
+          <h3>🔐 فتح جميع أقفال الهاتف</h3>
+          <p>يمكننا فتح قفل هواتف رادمي، ريالمي، اوبو، وسامسونج بعد الفورمات بسهولة.</p>
+          <span>السعر: 500 دج</span>
         </div>
-        <div class="service-card">
-            <h3>استعادة الحسابات</h3>
-            <p>مساعدتك في استعادة حساباتك على فيسبوك، إنستجرام، يوتيوب، وغيرها.</p>
+        <div id="phone-issues" class="service">
+          <img src="https://via.placeholder.com/60" alt="هاتف">
+          <h3>📱 حل مشاكل الهاتف أو الكمبيوتر</h3>
+          <p>نحن نحل جميع مشاكل الهاتف والكمبيوتر باحترافية عالية.</p>
+          <span>السعر: 500 دج</span>
         </div>
-        <div class="service-card">
-            <h3>مشاكل الهواتف</h3>
-            <p>فك قفل الهاتف، استعادة البيانات، وإصلاح المشاكل التقنية.</p>
+        <div id="facebook" class="service">
+          <img src="https://via.placeholder.com/60" alt="فيسبوك">
+          <h3>🌐 حل مشاكل الفيسبوك (قفل الملف الشخصي، تأمين الحسابات)</h3>
+          <p>نساعدك في حل مشاكل قفل ملفك الشخصي أو تأمين حساباتك على الفيسبوك.</p>
+          <span>السعر: 500 دج</span>
         </div>
-        <div class="service-card">
-            <h3>ألعاب الفيديو</h3>
-            <p>حل مشاكل الحسابات، استعادة البيانات، وإصلاح الأعطال التقنية.</p>
+        <div id="google-lock" class="service">
+          <img src="https://via.placeholder.com/60" alt="قفل جوجل">
+          <h3>🔑 تخطي قفل حساب Google</h3>
+          <p>هل عجزت عن تجاوز قفل حساب Google؟ لا تقلق، لدينا الحل!</p>
+          <span>السعر: 500 دج</span>
         </div>
-        <div class="service-card">
-            <h3>استشارات تقنية</h3>
-            <p>نصائح وإرشادات لتطوير مشاريعك التقنية وتحسين أدائك.</p>
+        <div id="courses" class="service">
+          <img src="https://via.placeholder.com/60" alt="كورسات">
+          <h3>🎓 تقديم كورسات بجميع أنواعها</h3>
+          <p>تعلم مهارات جديدة مع كورسات احترافية في مختلف المجالات.</p>
+          <span>السعر: 500 دج</span>
         </div>
+        <div id="other-services" class="service">
+          <img src="https://via.placeholder.com/60" alt="خدمات أخرى">
+          <h3>🌟 خدمات أخرى متنوعة</h3>
+          <p>نقدم لك خدمات تقنية استثنائية لتلبية جميع احتياجاتك.</p>
+          <span>السعر: 500 دج</span>
+        </div>
+        <div class="contact">
+          📞 <strong>اتصل الآن:</strong> <a href="tel:+213542659560">0542659560</a>, <a href="tel:+213559557290">0559557290</a><br>
+          📧 <strong>البريد الإلكتروني:</strong> <a href="mailto:brahimteguig72@gmail.com">brahimteguig72@gmail.com</a>
+        </div>
+      </div>
     </div>
-</section>
+    <footer>
+      جميع الحقوق محفوظة © 2025 | صمم بواسطة <a href="#">Teguig Ibrahim</a>
+    </footer>
+  </div>
 
-<section class="contact">
-    <h2>للتواصل</h2>
-    <p>هاتف: <a href="tel:0783308069">0783308069</a></p>
-    <p>البريد الإلكتروني: <a href="mailto:ryryryreyy54y@gmail.com">ryryryreyy54y@gmail.com</a></p>
-</section>
+  <script>
+    // Display testimonials randomly every 5 seconds
+    let testimonials = document.querySelectorAll('.testimonial');
+    let currentIndex = 0;
+  
+    function showTestimonial() {
+      testimonials.forEach((testimonial, index) => {
+        testimonial.style.display = 'none'; // Hide all testimonials
+      });
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      testimonials[currentIndex].style.display = 'block'; // Show next testimonial
+    }
+  
+    setInterval(showTestimonial, 5000); // Change testimonial every 5 seconds
 
-<footer>
-    <p>© 2024 - إبراهيم، جميع الحقوق محفوظة.</p>
-</footer>
-
+    // Display fake comments
+    let comments = document.querySelectorAll('.comment');
+    let commentIndex = 0;
+  
+    function showComment() {
+      comments.forEach((comment, index) => {
+        comment.style.display = 'none'; // Hide all comments
+      });
+      commentIndex = (commentIndex + 1) % comments.length;
+      comments[commentIndex].style.display = 'block'; // Show next comment
+    }
+  
+    setInterval(showComment, 5000); // Change comment every 5 seconds
+  </script>
 </body>
 </html>
